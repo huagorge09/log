@@ -49,7 +49,13 @@
                 <view class="input_title inline-block ">语音</view>
                 <view class="animated fadeInLeft voice_block" wx:if="{{isDoneRecord}}">
                     <button class="voice_btn" bindtap="playVoice">
-                        <image src="{{imgUrl}}icon_voice@2x.png" style="width: 16rpx;height: 20rpx;" class="animated {{isPlaying ? 'flash' : ''}
+                        <image src="{{imgUrl}}icon_voice@2x.png" style="width: 16rpx;height: 20rpx;" class="animated {{isPlaying ? 'flash' : ''}} infinite"></image>
+			 <text>{{recorderData.duration}}秒</text>
+                    </button>
+                    <text class="red" bindtap="delVoice">删除</text>
+                </view>
+                <button class="animated fadeInRight input_btn speak_btn" wx:else bindlongtap="startRecord" bindtouchend="endRecord">{{btnText}}</button>
+            </view>
 ``` 
 姓名|年龄|性别|职业|地址
 :---:|:---:|:---:|:---:|:---:
